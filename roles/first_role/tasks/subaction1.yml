@@ -1,0 +1,8 @@
+---
+#
+# NOTES: This is a fake YML file. Keep it simple and reusable. Compose complex actions using ../vars/main.yml file and include_tasks tasks.
+#
+
+- name: Subaction 1 debug
+  debug:
+    msg: "Subaction 1 debug"

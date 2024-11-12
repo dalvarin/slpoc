@@ -1,0 +1,6 @@
+- name: Error handling - Print ansible_failed_task var
+  debug:
+    msg: "{{ ansible_failed_task }}"
+- name: Error handling - Print ansible_failed_result
+  debug:
+    msg: "{{ ansible_failed_result }}"

@@ -1,0 +1,6 @@
+---
+- name: Return role final result in suitable way and format
+  ansible.builtin.debug:
+    msg: "{{ role_result }}"
+  when:
+    - role_result is defined

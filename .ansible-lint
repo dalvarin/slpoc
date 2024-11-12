@@ -1,0 +1,14 @@
+---
+exclude_paths:
+  - ./py3-ansible/
+  - ./roles/ansible-network.network-engine/
+  - ./docs/
+
+skip_list:
+  - 703
+  - 701
+  - 306
+  - 301
+  - 204
+
+verbosity: 3

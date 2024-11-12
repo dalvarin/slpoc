@@ -1,0 +1,7 @@
+#ansible version
+ansible==2.9.4
+# Required runtime modules
+paramiko
+jinja2<3.1
+requests
+packaging

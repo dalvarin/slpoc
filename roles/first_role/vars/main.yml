@@ -1,0 +1,11 @@
+---
+# vars file for first_role.
+---
+actions:
+  action1:
+    - subaction1
+  action2:
+    - subaction2
+  action3:
+    - subaction1
+    - subaction2

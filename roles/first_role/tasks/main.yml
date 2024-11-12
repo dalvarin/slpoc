@@ -1,0 +1,50 @@
+---
+#
+# NOTES: Should not be modified. All the work is done in the "Item configuration task".
+#
+- block:
+    - name: Fail if ansible version is lower than "{{ role_ansible_version }}"
+      ansible.builtin.assert:
+        that:
+          - "ansible_version.full is ansible.builtin.version(role_ansible_version, '>=', version_type='semver')"
+        fail_msg: "Your Ansible version is {{ ansible_version.full }} and must be greater or equal than {{ role_ansible_version }}"
+        success_msg: "Your Ansible version is {{ ansible_version.full }} and is greater or equal than {{ role_ansible_version }}"
+
+    - name: Validate action items
+      ansible.builtin.fail:
+        msg: "Action {{ action }} is not defined"
+      when: action not in actions
+      run_once: true
+      
+    - name: Get subaction implentation files stats
+      ansible.builtin.stat:
+        path: "{{ path }}"
+      register: stat_result
+      loop: "{{ actions[action] | flatten(levels=1) }}"
+      loop_control:
+        loop_var: subaction
+      vars:
+        path: "{{ lookup('ansible.builtin.fileglob', subaction + '.yml') }}"
+      delegate_to: localhost
+
+    - name: Validate subaction implementation files
+      ansible.builtin.assert:
+        that: file_stat.stat.exists
+        fail_msg: "File does not exist."
+        success_msg: "File exists."
+      loop: "{{ stat_result.results }}"
+      loop_control:
+        loop_var: file_stat
+
+    - name: Item Configuration
+      ansible.builtin.include_tasks: "{{ item }}.yml"
+      vars:
+        attribute: "{{ item }}"
+      loop: "{{ actions[action] | flatten(levels=1) }}"
+
+  rescue:
+    - name: Include Error Handling Tasks
+      ansible.builtin.include_tasks: "error_handling.yml"
+  always:
+    - name: Returns the result in a suitable way and format
+      ansible.builtin.include_tasks: "return_result.yml"

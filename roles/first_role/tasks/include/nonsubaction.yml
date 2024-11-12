@@ -1,0 +1,8 @@
+---
+#
+# NOTES: This is a fake YML file
+#
+
+- name: Non Subaction
+  debug:
+    msg: "Non Subaction"

@@ -1,0 +1,11 @@
+---
+#
+# NOTES: This is a fake YML file. Keep it simple and reusable. Compose complex actions using ../vars/main.yml file and include_tasks tasks.
+#
+
+- name: Subaction 2 debug
+  debug:
+    msg: "Subaction 2 debug"
+
+- name: Include a non-subaction YML file
+  include_tasks: "include/nonsubaction.yml"

@@ -1,0 +1,8 @@
+---
+common:
+  sdk_user: ansible_user
+# List of available environments
+envs:
+  - PRO
+  - PRE
+  - DEV

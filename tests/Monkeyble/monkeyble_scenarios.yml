@@ -1,0 +1,36 @@
+# monkeyble_scenarios.yaml
+# Just an example. Please, review the documentation to create your own scenarios.
+monkeyble_scenarios:
+  validate_test_1:
+    name: "Monkeyble hello world"
+    tasks_to_test:
+      - task: "debug task"
+        test_input:
+          - assert_equal:
+              arg_name: msg
+              expected: "Hello Monkeyble"
+  validate_set_virtual_server_port:
+    name: "Validate Set Virtual Server Port"
+    tasks_to_test:
+
+      - task: "Set global fact for base dir"
+        should_be_skipped: true
+
+      - task: "Assert variables"
+        should_be_skipped: true
+
+      - task: Include pre-tasks
+        should_be_skipped: true
+
+      - task: "Manage port_or_range input variable"
+        test_output:
+          - assert_equal:
+              result_key: result.ansible_facts.port.port_number
+              expected: "123"
+
+      # - task: "Second task"
+      #   test_input:
+      #     - assert_equal:
+      #         arg_name: msg
+      #         expected: "Hello Monkeyble"
+
