@@ -1,16 +1,10 @@
 
 ---
-#
-# NOTES: just a playbook template. The fie should be renamed from verb_noun.yml to something meaningfull like: set_server.yml, get_info.yml, etc.
-#
 - name: Playbook name and/or brief description
-  hosts: all
+  hosts: localhost
   connection: local
   gather_facts: false
   any_errors_fatal: true
-  collections:
-    - collectionA
-    - collectionB
 
   pre_tasks:
 
@@ -24,8 +18,6 @@
         msg: "{{ item }} is not defined"
       loop:
         - env
-        - mandatoryvariable1
-        - mnadatoryvariable2
 
     - name: Include pre-tasks
       include_tasks: "{{ play_dir }}/pretasks.yml"

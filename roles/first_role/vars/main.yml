@@ -1,6 +1,5 @@
 ---
 # vars file for first_role.
----
 actions:
   action1:
     - subaction1

@@ -6,3 +6,7 @@
 - name: Subaction 1 debug
   debug:
     msg: "Subaction 1 debug"
+
+- name: Update result fact 
+  ansible.builtin.set_fact:
+    role_result: "[{'name'}:{'dani'},{'name'}:{'ana'},{'name'}:{'unai'},{'name'}:{'tiago'}]"
