@@ -4,3 +4,9 @@
     msg: "{{ role_result }}"
   when:
     - role_result is defined
+
+- name: Role execution final stats
+  ansible.builtin.set_stats:
+  per_host: true
+  data:
+    role_result: "{{ role_result }}
