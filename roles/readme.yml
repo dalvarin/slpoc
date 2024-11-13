@@ -1,5 +1,6 @@
 ---
 # Pull down common roles
+# DOC: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-roles-and-collections-from-the-same-requirements-yml-file
 # Rename this file to requirements.yml and add the roles that should be imported into this environment
 # This contect could be placed instead in "dependencies:" section of meta/main.yml of each indivudual local role
 # - src: https://my.scm.com/my-ansible-roles/role1.git
