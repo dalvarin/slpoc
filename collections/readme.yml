@@ -1,0 +1,8 @@
+---
+# DOC: https://docs.ansible.com/ansible/latest/collections_guide/collections_installing.html#install-multiple-collections-with-a-requirements-file
+# Rename this file to requirements.yml in order to install required collections into ansible environment. This content could be placed instead in collections: section from meta/main.yml
+# of each individual role.
+# A very simple example:
+# collections:
+#   - ansible.netcommon
+#   - ansible.utils
