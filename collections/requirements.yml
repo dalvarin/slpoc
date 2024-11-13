@@ -1,4 +1,5 @@
 ---
-collections:
-   - ansible.netcommon
-   - ansible.utils
+# DOC: https://docs.ansible.com/ansible/latest/collections_guide/collections_installing.html#install-multiple-collections-with-a-requirements-file
+# collections:
+#   - ansible.netcommon
+#   - ansible.utils
