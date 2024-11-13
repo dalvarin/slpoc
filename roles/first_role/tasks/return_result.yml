@@ -9,4 +9,4 @@
   ansible.builtin.set_stats:
   per_host: true
   data:
-    role_result: "{{ role_result }}
+    role_result: "{{ role_result }}"
