@@ -1,5 +1,7 @@
 ---
 # Pull down common roles
 # Rename this file to requirements.yml and add the roles that should be imported into this environment
-# - role1
-# - role2
+# - src: https://my.scm.com/my-ansible-roles/role1.git
+#  scm: git
+#  version: master
+#  name: role1
